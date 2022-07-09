@@ -304,6 +304,7 @@ main {
   background-color: rgb(203, 68, 0);
   color: rgb(227, 232, 232);
 }
+
 @media (max-width: 768px) {
   .footerNav a {
     font-size: 15px;
