@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/authStyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/cef6e28be6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Регистрация</title>
+  </head>
+  <body>
+    <header>
+      <img class="headImg" src="./0_pics/Dogs_Cats_Guinea_pigs.jpg" alt="pic" />
+      <nav class="headerNav">
+        <ul class="navigList">
+          <li><a href="./authSingIn.html">Вход</a></li>
+          <li><a href="./authReg.html">Регистрация</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="#" method="post" class="registerForm">
+        <h1>Зарегистрироваться</h1>
+        <label> Ваше Имя <input type="text" name="name" /></label>
+        <label>
+          Ваш телефон / эмейл <input type="text" name="telEmail"
+        /></label>
+        <label>
+          Придумайте пароль <input type="password" name="newUserPass1"
+        /></label>
+        <label>
+          Провторите пароль <input type="password" name="newUserPass2"
+        /></label>
+        <label class="labelWithNoHover">
+          <input type="checkbox" name="passSave" class="inputCheckBox" />
+          <span class="isHidden">Показать пароль</span>
+          <span class="isNotHidden">Скрыть пароль</span>
+        </label>
+        <button type="submit">Вход</button>
+      </form>
+    </main>
+    <footer>
+      <nav class="footerNav">
+        <div class="footerNav_payment">
+          <a class="footerNav_payment_link" href="#">Оплата</a>
+          <i class="footerNav_payment_icon far fa-money-bill-alt"></i>
+        </div>
+
+        <div class="footerNav_delivery">
+          <a class="footerNav_delivery_link" href="#">Доставка</a>
+          <i class="fas fa-car-side footerNav_delivery_icon"></i>
+        </div>
+
+        <div class="footerNav_contacts">
+          <a class="footerNav_contacts_link" href="#">Контакты</a>
+          <i class="fas fa-phone footerNav_contacts_icon"></i>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
