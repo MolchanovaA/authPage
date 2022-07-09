@@ -10,7 +10,7 @@ class SaveLoginInfoToLS {
 
     this._fields.addEventListener("change", function ({ target }) {
       fieldNames.forEach((i) => {
-        if (target.classList.contains(`${i}`)) {
+        if (target.name === i) {
           localStorage.setItem(i, target.value);
         }
       });
@@ -43,7 +43,7 @@ class GetInfoFRomLS {
   setInfoToInput() {
     if (this.lsHelper.length > 0) {
       this.lsHelper.forEach((item) => {
-        this._form.querySelector(`input.${item[0]}`).value = item[1];
+        this._form.querySelector(`input[name="${item[0]}"]`).value = item[1];
       });
     }
   }
