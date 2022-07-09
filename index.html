@@ -29,17 +29,22 @@
       </nav>
     </header>
     <main>
-      <form action="#" method="post" class="registerForm">
+      <form action="#" method="post" class="registerForm" id="auth">
         <h1>Зарегистрироваться</h1>
-        <label> Ваше Имя <input type="text" name="name" /></label>
         <label>
-          Ваш телефон / эмейл <input type="text" name="telEmail"
+          Ваше Имя <input class="userName" type="text" name="name"
         /></label>
         <label>
-          Придумайте пароль <input type="password" name="newUserPass1"
+          Ваш телефон / эмейл
+          <input class="userPhoneNumber" type="text" name="telEmail"
         /></label>
         <label>
-          Провторите пароль <input type="password" name="newUserPass2"
+          Придумайте пароль
+          <input class="userPassword_1" type="password" name="newUserPass1"
+        /></label>
+        <label>
+          Провторите пароль
+          <input class="userPassword_2" type="password" name="newUserPass2"
         /></label>
         <label class="labelWithNoHover">
           <input type="checkbox" name="passSave" class="inputCheckBox" />
@@ -70,5 +75,6 @@
         </div>
       </nav>
     </footer>
+    <script src="./src/main.js"></script>
   </body>
 </html>
