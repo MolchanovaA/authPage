@@ -7,16 +7,15 @@
     <link rel="stylesheet" href="./src/authStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script
-      src="https://kit.fontawesome.com/cef6e28be6.js"
-      crossorigin="anonymous"
-    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
       rel="stylesheet"
     />
-
-    <title>Регистрация</title>
+    <script
+      src="https://kit.fontawesome.com/cef6e28be6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Вход</title>
   </head>
   <body>
     <header>
@@ -30,21 +29,20 @@
     </header>
     <main>
       <form action="#" method="post" class="registerForm">
-        <h1>Зарегистрироваться</h1>
-        <label> Ваше Имя <input type="text" name="name" /></label>
+        <h1>Вход</h1>
         <label>
           Ваш телефон / эмейл <input type="text" name="telEmail"
         /></label>
-        <label>
-          Придумайте пароль <input type="password" name="newUserPass1"
-        /></label>
-        <label>
-          Провторите пароль <input type="password" name="newUserPass2"
-        /></label>
+        <label> Пароль <input type="password" name="password" /></label>
+        <label class="labelWithNoHover">
+          <input type="checkbox" name="passShow" class="inputCheckBox" />
+          <span class="isHidden">Показать пароль</span>
+          <span class="isNotHidden">Пароль виден</span>
+        </label>
         <label class="labelWithNoHover">
           <input type="checkbox" name="passSave" class="inputCheckBox" />
-          <span class="isHidden">Показать пароль</span>
-          <span class="isNotHidden">Скрыть пароль</span>
+          <span class="isHidden">Сохранить авторизацию</span>
+          <span class="isNotHidden">Авторизация сохранена</span>
         </label>
         <button type="submit">Вход</button>
       </form>
