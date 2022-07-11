@@ -1,52 +1,55 @@
 class SaveLoginInfoToLS {
-  constructor(inputFields, namesOfFields) {
+  constructor(inputFields, namesOfFields, user) {
     this._fields = inputFields;
+    this._userName = user;
     this._namesOfFields = namesOfFields;
     inputFields._toAddListenerToField = this.toAddInfoFromFieldToLS();
   }
 
   toAddInfoFromFieldToLS() {
     let fieldNames = this._namesOfFields;
-
+    let objToLS = this._userName;
     this._fields.addEventListener("change", function ({ target }) {
-      fieldNames.forEach((i) => {
-        if (target.name === i) {
-          localStorage.setItem(i, target.value);
-        }
-      });
+      fieldNames[target.name] = target.value;
+      localStorage.setItem(objToLS, JSON.stringify(fieldNames));
     });
   }
 }
 
-const fieldNames = [
-  "userName",
-  "userPhoneNumber",
-  "userPassword_1",
-  "userPassword_2",
-];
+const fieldNames = {
+  fieldsToTakeInfo: {
+    userName: null,
+    userPhoneNumber: null,
+    userPassword_1: null,
+    userPassword_2: null,
+  },
+  helper: "helper",
+};
+const { fieldsToTakeInfo, helper } = fieldNames;
 
-new SaveLoginInfoToLS(auth, fieldNames);
+new SaveLoginInfoToLS(auth, fieldsToTakeInfo, helper);
 
 class GetInfoFRomLS {
-  constructor(form, fieldsToUpdate) {
+  constructor(form, lsHelper) {
     this._form = form;
-    this._fieldsToUpdate = fieldsToUpdate;
-    this.lsHelper = [];
+    this._lsHelper = lsHelper;
+    this.objFromLS = null;
     form._getInfo = this.getInfoFromLS();
   }
   getInfoFromLS() {
-    this._fieldsToUpdate.forEach((item) => {
-      this.lsHelper.push([item, localStorage.getItem(item)]);
-    });
+    this.objFromLS = JSON.parse(localStorage.getItem(this._lsHelper));
     this.setInfoToInput();
   }
   setInfoToInput() {
-    if (this.lsHelper.length > 0) {
-      this.lsHelper.forEach((item) => {
-        this._form.querySelector(`input[name="${item[0]}"]`).value = item[1];
-      });
+    if (this._lsHelper.length > 0) {
+      console.log(this.objFromLS, "objFromLs");
+      for (let key in this.objFromLS) {
+        console.log(key, this.objFromLS[key]);
+        this_form.querySelector(`input[name="${key}"]`).value =
+          this.objFromLS[key];
+      }
     }
   }
 }
 
-new GetInfoFRomLS(auth, fieldNames);
+new GetInfoFRomLS(auth, helper);
