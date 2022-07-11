@@ -44,8 +44,8 @@ class GetInfoFRomLS {
     if (this._lsHelper.length > 0) {
       console.log(this.objFromLS, "objFromLs");
       for (let key in this.objFromLS) {
-        console.log(key, this.objFromLS[key]);
-        this_form.querySelector(`input[name="${key}"]`).value =
+        if (!this._form.querySelector(`input[name="${key}"]`)) return;
+        this._form.querySelector(`input[name="${key}"]`).value =
           this.objFromLS[key];
       }
     }
@@ -53,3 +53,5 @@ class GetInfoFRomLS {
 }
 
 new GetInfoFRomLS(auth, helper);
+
+submitButton.addEventListener("click", (e) => e.preventDefault());
